@@ -82,13 +82,18 @@ public class JobData {
         }
 
         return jobs;
-    public static ArrayList<HashMap<String,String>> findByValue(String value) {
+    }
+
+        public static ArrayList<HashMap<String,String>> findByValue(String value) {
+            ArrayList<HashMap<String, String>> jobs = new ArrayList<>();
         //similar to above, loop through allJobs
             //for each job loop through each job HashMap
-                //for each column check for a match (use a break statement)
-                // when we find a match, break;
+            //for each column check for a match (use a break statement)
+            // when we find a match, break;
 
+            return jobs;
         }
+
     /**
      * Read in data from a CSV file and store it in a list
      */
