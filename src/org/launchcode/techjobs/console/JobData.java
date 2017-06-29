@@ -10,6 +10,7 @@ import java.io.Reader;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Created by LaunchCode
@@ -84,8 +85,33 @@ public class JobData {
         return jobs;
     }
 
-        public static ArrayList<HashMap<String,String>> findByValue(String value) {
-            ArrayList<HashMap<String, String>> jobs = new ArrayList<>();
+    public static ArrayList<HashMap<String,String>> findByValue(String value) {
+
+        // load data, if not already loaded
+        loadData();
+
+        ArrayList<HashMap<String, String>> jobs = new ArrayList<>();
+
+            for (HashMap<String, String> row : allJobs) {
+
+                for (Map.Entry<String, String> jobValue : row.entrySet()) {
+                     String aValue=jobValue.getValue();
+                      if (aValue.contains(value)) {
+                          jobs.add(row);
+                          {break; }
+                      }
+
+                    }
+
+
+
+
+
+            }
+
+
+
+
         //similar to above, loop through allJobs
             //for each job loop through each job HashMap
             //for each column check for a match (use a break statement)
