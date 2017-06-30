@@ -55,6 +55,9 @@ public class JobData {
         return allJobs;
     }
 
+
+
+
     /**
      * Returns results of search the jobs data by key/value, using
      * inclusion of the search term.
@@ -75,9 +78,8 @@ public class JobData {
 
         for (HashMap<String, String> row : allJobs) {
 
-            String aValue = row.get(column);
-
-            if (aValue.contains(value)) {
+            String aValue = row.get(column).toLowerCase();
+            if (aValue.contains(value.toLowerCase())) {
                 jobs.add(row);
             }
         }
@@ -95,8 +97,8 @@ public class JobData {
             for (HashMap<String, String> row : allJobs) {
 
                 for (Map.Entry<String, String> jobValue : row.entrySet()) {
-                     String aValue=jobValue.getValue();
-                      if (aValue.contains(value)) {
+                     String aValue=jobValue.getValue().toLowerCase();
+                    if (aValue.contains(value.toLowerCase())) {
                           jobs.add(row);
                           {break; }
                       }
