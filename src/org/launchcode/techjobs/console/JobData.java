@@ -93,14 +93,15 @@ public class JobData {
         loadData();
 
         ArrayList<HashMap<String, String>> jobs = new ArrayList<>();
-
+            //loop through all jobs
             for (HashMap<String, String> row : allJobs) {
-
+                // loop through hashmaps of each job
                 for (Map.Entry<String, String> jobValue : row.entrySet()) {
                      String aValue=jobValue.getValue().toLowerCase();
+                     // check job value against value given
                     if (aValue.contains(value.toLowerCase())) {
                           jobs.add(row);
-                          {break; }
+                          break;
                       }
 
                     }
@@ -114,10 +115,7 @@ public class JobData {
 
 
 
-        //similar to above, loop through allJobs
-            //for each job loop through each job HashMap
-            //for each column check for a match (use a break statement)
-            // when we find a match, break;
+
 
             return jobs;
         }
